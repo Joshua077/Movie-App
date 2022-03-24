@@ -1,38 +1,152 @@
-.App {
+html,body{
+  color:black;
+  margin: 0px;
+  
+  height:100%;
+  padding-bottom: 54px;
+  
+}
+
+.movieApp{display: flex;
+  flex-wrap: nowrap;
+padding-right: 12px;}
+.movieApp::-webkit-scrollbar{
+  width: "0px";
+}
+.image-container{
+  position: relative;
+  transition: transform 0.2s;
+
+}
+.image-container:hover{
+  position: relative;
+  transition: transform 0.2s;
+  
+}
+.image-container:hover.overlay{opacity: 1;}
+.overlay{
+  position: absolute;
+  background-color: black;
+  width:100%;
+  transition: 0.5s ease;
+  opacity:0;
+  bottom:0;
+  font-size: 12px;
+  padding:20px;
   text-align: center;
 }
+.navbar{
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+background: #292929;
+padding: 40px 1170px 40px 72px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbarText{
+  color:white;
+  
+  background-color: "transparent";
+  border: 1px solid white;
+ 
+  box-sizing: border-box;
+ padding: 12px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.text2{
+  font-size: 21px;
 }
+.img{
+  
+  background-repeat: no-repeat;
+  background-position: left top;
+  
+  background-size: auto 100%;
+  background-size: cover;
+  height: 100%;
+}
+.imgText{
+ font-size: 72px;
+ line-height: 93.7px;
+ font-family: Dm Sans;
+ font-style: normal;
+ color: white;
+ padding: 109px 873px 159px 77px;
+ margin: 0;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.text{
+  font-size: 24px;
+ line-height: 31.5px;
+ font-family: Dm Sans;
+ font-style: normal;
+ color: #000;
+
+}
+.input-container{
+  margin-top: 63px;
+  margin-left: 78px;
+  margin-right: 57px;
+}
+.input-container1{
+  margin-top: 63px;
+  margin-left: 78px;
+  margin-right: 57px;
+}
+.input-container2{
+  margin-top: 63px;
+  margin-left: 78px;
+  margin-right: 57px;
+  margin-bottom:  185px;
+}
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+  .card {
+    display: inline-block;
   }
-  to {
-    transform: rotate(360deg);
+  .scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
   }
+
+  @media only screen and (min-device-width : 768px) and (max-device-width : 991px)  { 
+    
+    .navbar{
+padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .text2{
+        font-size: 16px;
+      }
+      
+      .imgText{
+        text-align: center;
+        padding: 109px 0px 159px 0px;
+      }
+}
+@media screen and (max-width:767px) {
+  .navbar{
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .text2{
+      font-size: 19px;
+    }
+    .imgText{
+      text-align: center;
+      font-size: 24px;
+      line-height: 29.7px;
+      
+ padding: 109px 0px 159px 0px;
+    }
+    .input-container{
+      margin-top: 63px;
+      margin-left: 28px;
+      margin-right: 28px;
+    }
 }

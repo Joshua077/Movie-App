@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import {useState,useEffect} from 'react'
+import Navbar from './Component/Navbar';
 import './App.css';
-
+import Hero from './Component/Hero/Hero';
+import Input from './Component/Input';
+import Movelist from './Component/Movelist';
 function App() {
+  const [searchValue,setSearchValue] = useState("avenger")
+  const [movieList, setMovielist] = useState([])
+  const getMovie = async(searchValue) =>{
+    const url =  `http://www.omdbapi.com/?s=${searchValue}&apikey=8e3ac4ba` 
+    const response = await fetch(url)
+    const responsJson = await response.json()
+    console.log(responsJson.Search)
+    if(responsJson.Search){
+      setMovielist(responsJson.Search)
+    }
+    
+  }
+  useEffect(()=>{
+    getMovie(searchValue)
+  },[searchValue])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <Navbar/>
+     <Hero/>
+     <Input searchValue={searchValue} setSearchValue={setSearchValue}/>
+     <Movelist movies={movieList}/>
     </div>
   );
 }
